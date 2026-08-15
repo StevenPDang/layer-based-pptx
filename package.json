@@ -6,6 +6,7 @@
     "dev": "pnpm --dir react dev",
     "build": "pnpm --dir react build",
     "lint": "pnpm --dir react lint",
-    "preview": "pnpm --dir react preview"
+    "preview": "pnpm --dir react preview",
+    "docker": "docker compose up -d db"
   }
 }
