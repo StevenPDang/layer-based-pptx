@@ -1,0 +1,9 @@
+[workspace]
+resolver = "3"
+
+members = [
+    "crates/presentation-model",
+    "crates/pptx",
+    "crates/engine-protocol",
+    "crates/engine-cli",
+]
