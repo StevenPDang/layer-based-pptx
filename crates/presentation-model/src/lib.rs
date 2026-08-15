@@ -1,14 +1,59 @@
-pub fn add(left: u64, right: u64) -> u64 {
-    left + right
+use serde::{Deserialize, Serialize}
+
+#[derive(Debug, Clone, Serialize, Deserialize, PartialEq)]
+#[serde(renameAll = "camelCase")]
+pub struct Presentation {
+    pub slides: Vec<Slide>
 }
 
-#[cfg(test)]
-mod tests {
-    use super::*;
-
-    #[test]
-    fn it_works() {
-        let result = add(2, 2);
-        assert_eq!(result, 4);
-    }
+#[derive(Debug, Clone, Serialize, Deserialize, PartialEq)]
+#[serde(renameAll = "camelCase")]
+pub struct Slide {
+    pub id: SlideId,
+    pub layers: Vec<Layer>
 }
+
+#[derive(Debug, Clone, Serialize, Deserialize, PartialEq)]
+#[serde(renameAll = "camelCase")]
+pub struct Layer {
+    pub id: LayerId,
+    pub frame: Frame,
+    pub content: LayerContent,
+}
+
+#[derive(Debug, Clone, Serialize, Deserialize, PartialEq)]
+#[serde(renameAll = "camelCase")]
+pub enum LayerContent {
+    Text(TextContent),
+    Image(ImageContent),
+    Vector(VectorContent),
+}
+
+#[derive(Debug, Clone, Serialize, Deserialize, PartialEq)]
+#[serde(renameAll = "camelCase")]
+pub struct TextContent {
+    pub text: String,
+}
+
+#[derive(Debug, Clone, Serialize, Deserialize, PartialEq)]
+#[serde(renameAll = "camelCase")]
+pub struct ImageContent {
+    pub source: String,
+    pub mime_type: String,
+}
+
+#[derive(Debug, Clone, Serialize, Deserialize, PartialEq)]
+#[serde(renameAll = "camelCase")]
+pub struct Frame {
+    pub x: i64
+    pub y: i64,
+    pub width: i64,
+    pub heigth: i64
+}
+
+#[derive(Debug, Clone, Serialize, Deserialize, PartialEq)]
+pub struct LayerId(pub String);
+
+
+#[derive(Debug, Clone, Serialize, Deserialize, PartialEq)]
+pub struct SlideId(pub String);
