@@ -3,10 +3,13 @@
   "version": "0.0.0",
   "private": true,
   "scripts": {
-    "dev": "pnpm --dir react dev",
-    "build": "pnpm --dir react build",
-    "lint": "pnpm --dir react lint",
-    "preview": "pnpm --dir react preview",
+    "dev": "pnpm --dir apps/desktop dev",
+    "dev:web": "pnpm --dir apps/desktop dev:web",
+    "build": "pnpm --dir apps/desktop build",
+    "lint": "pnpm --dir apps/desktop lint",
+    "preview": "pnpm --dir apps/desktop preview",
+    "start": "pnpm --dir apps/desktop start",
+    "test:electron": "pnpm --dir apps/desktop test:electron",
     "docker": "docker compose up -d db"
   }
 }
