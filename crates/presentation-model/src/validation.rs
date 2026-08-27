@@ -6,7 +6,6 @@ pub struct ValidationError {
     pub kind: ValidationErrorKind,
 }
 
-
 #[derive(Debug, Clone, PartialEq, Eq)]
 pub struct ValidationErrors(pub Vec<ValidationError>);
 
@@ -40,14 +39,14 @@ pub fn validate(presentation: &Presentation) -> Result<(), ValidationErrors> {
     if presentation.size.width.0 <= 0 {
         errors.push(ValidationError {
             location: ValidationLocation::Presentation,
-            kind: ValidationErrorKind::NonPositiveSlideWidth
+            kind: ValidationErrorKind::NonPositiveSlideWidth,
         })
     }
 
     if presentation.size.height.0 <= 0 {
         errors.push(ValidationError {
             location: ValidationLocation::Presentation,
-            kind: ValidationErrorKind::NonPositiveSlideHeight
+            kind: ValidationErrorKind::NonPositiveSlideHeight,
         })
     }
 
@@ -57,8 +56,3 @@ pub fn validate(presentation: &Presentation) -> Result<(), ValidationErrors> {
         Err(ValidationErrors(errors))
     }
 }
-
-
-
-
-

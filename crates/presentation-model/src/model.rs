@@ -5,31 +5,31 @@ pub struct Emu(pub i64);
 
 #[derive(Debug, Clone, PartialEq, Eq, Serialize, Deserialize)]
 #[serde(rename_all = "camelCase")]
-pub struct Presentation { 
-    pub size : SlideSize,
-    pub slides : Vec<Slide>,
+pub struct Presentation {
+    pub size: SlideSize,
+    pub slides: Vec<Slide>,
 }
 
 #[derive(Debug, Clone, PartialEq, Eq, Serialize, Deserialize)]
 #[serde(rename_all = "camelCase")]
 pub struct SlideSize {
-    pub height : Emu,
-    pub width : Emu,
+    pub height: Emu,
+    pub width: Emu,
 }
 
 #[derive(Debug, Clone, PartialEq, Eq, Serialize, Deserialize)]
 #[serde(rename_all = "camelCase")]
 pub struct Slide {
-    pub slide_id : SlideId,
-    pub layer : Vec<Layer>
+    pub slide_id: SlideId,
+    pub layer: Vec<Layer>,
 }
 
 #[derive(Debug, Clone, PartialEq, Eq, Serialize, Deserialize)]
 #[serde(rename_all = "camelCase")]
 pub struct Layer {
-    pub layer_id : LayerId,
-    pub frame : Frame,
-    pub layer_content : LayerContent,
+    pub layer_id: LayerId,
+    pub frame: Frame,
+    pub layer_content: LayerContent,
 }
 
 #[derive(Debug, Clone, PartialEq, Eq, Serialize, Deserialize)]
@@ -41,16 +41,16 @@ pub enum LayerContent {
 #[derive(Debug, Clone, PartialEq, Eq, Serialize, Deserialize)]
 #[serde(rename_all = "camelCase")]
 pub struct TextContent {
-    pub text : String,
+    pub text: String,
 }
 
 #[derive(Debug, Clone, PartialEq, Eq, Serialize, Deserialize)]
 #[serde(rename_all = "camelCase")]
 pub struct Frame {
-    pub x : Emu,
-    pub y : Emu,
-    pub width : Emu,
-    pub height : Emu,
+    pub x: Emu,
+    pub y: Emu,
+    pub width: Emu,
+    pub height: Emu,
 }
 
 #[derive(Debug, Clone, PartialEq, Eq, Serialize, Deserialize)]
