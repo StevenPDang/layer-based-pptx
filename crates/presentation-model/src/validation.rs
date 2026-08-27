@@ -27,10 +27,10 @@ pub enum ValidationErrorKind {
     NonPositiveSlideHeight,
     EmptySlideId,
     EmptyLayerId,
-    NonPosistiveLayerWidth,
-    NonPosisitveLayerHeight,
+    NonPositiveLayerWidth,
+    NonPositiveLayerHeight,
     DuplicateSlideId,
-    DuplicatedLayerId,
+    DuplicateLayerId,
 }
 
 pub fn validate(presentation: &Presentation) -> Result<(), ValidationErrors> {

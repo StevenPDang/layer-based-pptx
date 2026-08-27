@@ -21,7 +21,7 @@ pub struct SlideSize {
 #[serde(rename_all = "camelCase")]
 pub struct Slide {
     pub slide_id: SlideId,
-    pub layer: Vec<Layer>,
+    pub layers: Vec<Layer>,
 }
 
 #[derive(Debug, Clone, PartialEq, Eq, Serialize, Deserialize)]
@@ -29,7 +29,7 @@ pub struct Slide {
 pub struct Layer {
     pub layer_id: LayerId,
     pub frame: Frame,
-    pub layer_content: LayerContent,
+    pub content: LayerContent,
 }
 
 #[derive(Debug, Clone, PartialEq, Eq, Serialize, Deserialize)]
